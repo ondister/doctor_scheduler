@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DScheduler.Domain", "DScheduler.Domain\DScheduler.Domain.csproj", "{A2A315F9-A4F4-4994-8EC8-76FCBB1D2CAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DScheduler.Domain", "DScheduler.Domain\DScheduler.Domain.csproj", "{A2A315F9-A4F4-4994-8EC8-76FCBB1D2CAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gui", "Gui", "{B4AB06C7-C43F-4280-A041-CD16E6CBCB8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DScheduler.Gui.ConsoleDemo", "Gui\DScheduler.Gui.ConsoleDemo\DScheduler.Gui.ConsoleDemo.csproj", "{EEF55BD6-D906-46FB-AD33-2BFBAFEB533B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DScheduler.Generation.Genetic", "DScheduler.Generation.Genetic\DScheduler.Generation.Genetic.csproj", "{9949093E-E680-42F7-B983-DDE3553D7F09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,20 @@ Global
 		{A2A315F9-A4F4-4994-8EC8-76FCBB1D2CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2A315F9-A4F4-4994-8EC8-76FCBB1D2CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2A315F9-A4F4-4994-8EC8-76FCBB1D2CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF55BD6-D906-46FB-AD33-2BFBAFEB533B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF55BD6-D906-46FB-AD33-2BFBAFEB533B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF55BD6-D906-46FB-AD33-2BFBAFEB533B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF55BD6-D906-46FB-AD33-2BFBAFEB533B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9949093E-E680-42F7-B983-DDE3553D7F09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9949093E-E680-42F7-B983-DDE3553D7F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9949093E-E680-42F7-B983-DDE3553D7F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9949093E-E680-42F7-B983-DDE3553D7F09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EEF55BD6-D906-46FB-AD33-2BFBAFEB533B} = {B4AB06C7-C43F-4280-A041-CD16E6CBCB8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D9CC8CD-6F77-4C2A-B35E-9616F80EA0D4}
