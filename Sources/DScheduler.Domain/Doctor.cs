@@ -2,12 +2,45 @@
 
 public sealed class Doctor : IEquatable<Doctor>
 {
-    public Doctor(string name)
+    private readonly List<DateOnly> _expectedDays;
+    private readonly List<DateOnly> _wishDays;
+
+    public Doctor(string name, bool isVip = false)
     {
         Name = name;
+        IsVip = isVip;
+        _expectedDays = new List<DateOnly>();
+        _wishDays = new List<DateOnly>();
     }
 
+    public IReadOnlyList<DateOnly> ExpectedDays => _expectedDays.AsReadOnly();
+
+    public IReadOnlyList<DateOnly> WishDays => _wishDays.AsReadOnly();
+
     public string Name { get; }
+
+    public bool IsVip { get; }
+
+    public TimeSpan WorkingDayDuration { get; private set; }
+
+    public Doctor AddExpectedDay(DateOnly day)
+    {
+        if (_expectedDays.Contains(day))
+        {
+            return this;
+        }
+
+        _expectedDays.Add(day);
+
+        return this;
+    }
+
+    public Doctor SetWorkingDayDuration(TimeSpan workingDayDuration)
+    {
+       WorkingDayDuration= workingDayDuration;
+
+       return this;
+    }
 
     /// <inheritdoc />
     public bool Equals(Doctor? other)
@@ -45,5 +78,11 @@ public sealed class Doctor : IEquatable<Doctor>
     public static bool operator !=(Doctor? left, Doctor? right)
     {
         return !Equals(left, right);
+    }
+
+    /// <inheritdoc />
+    public override string ToString()
+    {
+        return Name;
     }
 }

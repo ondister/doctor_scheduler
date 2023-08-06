@@ -2,6 +2,6 @@
 {
     public interface ISchedulerGenerationStrategy
     {
-        Task<IDictionary<WorkingUnit, Doctor>> GenerateAsync(GenerationSource source, IProgress<GenerationProgressInfo> progress, CancellationToken cancellationToken);
+        Task<IList<ScheduledDay>> GenerateAsync(GenerationSource source, IProgress<GenerationProgressInfo> progress, CancellationToken cancellationToken);
     }
 }

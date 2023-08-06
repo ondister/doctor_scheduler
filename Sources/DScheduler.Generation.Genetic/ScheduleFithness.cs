@@ -1,4 +1,4 @@
-﻿using DScheduler.Domain;
+﻿using DScheduler.Domain.Rules;
 using DScheduler.Generation.Genetic.Rules;
 
 using GeneticSharp;
@@ -28,6 +28,6 @@ public sealed class ScheduleFithness : IFitness
             result += rule.Calculate();
         }
 
-        return -result;
+        return result * -1;
     }
 }

@@ -1,19 +1,21 @@
-﻿namespace DScheduler.Domain.Generation;
+﻿using DScheduler.Domain.Rules;
+
+namespace DScheduler.Domain.Generation;
 
 public sealed class GenerationSource
 {
     public GenerationSource()
     {
         Doctors = Enumerable.Empty<Doctor>();
-        WorkingUnits = Enumerable.Empty<WorkingUnit>();
+        ScheduledDays = Enumerable.Empty<ScheduledDay>();
         Rules = Enumerable.Empty<ISchedulerRule>();
     }
 
     public IEnumerable<Doctor> Doctors { get; private set; }
 
-    public IEnumerable<WorkingUnit> WorkingUnits { get; private set; }
-
     public IEnumerable<ISchedulerRule> Rules { get; private set; }
+
+    public IEnumerable<ScheduledDay> ScheduledDays { get; private set; }
 
     public static GenerationSource Create()
     {
@@ -29,11 +31,11 @@ public sealed class GenerationSource
         return this;
     }
 
-    public GenerationSource WithWorkingUnits(IEnumerable<WorkingUnit> workingUnits)
+    public GenerationSource WithScheduledDays(IEnumerable<ScheduledDay> scheduledDays)
     {
-        ArgumentNullException.ThrowIfNull(workingUnits);
+        ArgumentNullException.ThrowIfNull(scheduledDays);
 
-        WorkingUnits = workingUnits;
+        ScheduledDays = scheduledDays;
 
         return this;
     }
@@ -49,7 +51,8 @@ public sealed class GenerationSource
     public bool Validate()
     {
         return Doctors.Any()
-            && WorkingUnits.Any()
-            && Rules.Any();
+            && ScheduledDays.Any()
+            && Rules.Any()
+            && ScheduledDays.All(day => day.WorkingUnits.Any());
     }
 }

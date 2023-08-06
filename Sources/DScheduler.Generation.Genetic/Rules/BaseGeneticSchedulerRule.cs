@@ -1,4 +1,5 @@
 ﻿using DScheduler.Domain;
+using DScheduler.Domain.Rules;
 
 using GeneticSharp;
 
@@ -8,7 +9,7 @@ public abstract class BaseGeneticSchedulerRule : ISchedulerRule
 {
     protected BaseGeneticSchedulerRule(double weight)
     {
-        if (weight < 0 || weight > 10)
+        if (weight < 0 || weight > 20)
         {
             throw new ArgumentOutOfRangeException(nameof(weight), message: "Rule weight should be from 0 to 10");
         }
@@ -32,5 +33,13 @@ public abstract class BaseGeneticSchedulerRule : ISchedulerRule
         return CalculateInternal(Genes);
     }
 
+    /// <inheritdoc />
+    public IRuleViolation GetViolationForDoctor(Scheduler scheduler, Doctor doctor)
+    {
+        return GetViolationInternal(scheduler, doctor);
+    }
+
     protected abstract double CalculateInternal(Gene[] genes);
+
+    protected abstract IRuleViolation GetViolationInternal(Scheduler scheduler, Doctor doctor);
 }

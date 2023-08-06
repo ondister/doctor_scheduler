@@ -10,4 +10,7 @@ public sealed class DayWorkingUnit : WorkingUnit
     }
 
     public DateOnly Date { get; }
+
+    /// <inheritdoc />
+    public override TimeSpan Duration { get; } = TimeSpan.FromHours(24);
 }
