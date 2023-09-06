@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gui", "Gui", "{B4AB06C7-C43
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DScheduler.Gui.ConsoleDemo", "Gui\DScheduler.Gui.ConsoleDemo\DScheduler.Gui.ConsoleDemo.csproj", "{EEF55BD6-D906-46FB-AD33-2BFBAFEB533B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DScheduler.Generation.Genetic", "DScheduler.Generation.Genetic\DScheduler.Generation.Genetic.csproj", "{9949093E-E680-42F7-B983-DDE3553D7F09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DScheduler.Generation.Genetic", "DScheduler.Generation.Genetic\DScheduler.Generation.Genetic.csproj", "{9949093E-E680-42F7-B983-DDE3553D7F09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DScheduler.Gui.Wpf", "Gui\DScheduler.Gui.Wpf\DScheduler.Gui.Wpf.csproj", "{5CC46A6F-EF9A-469D-83EE-A7C18596B7B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +31,17 @@ Global
 		{9949093E-E680-42F7-B983-DDE3553D7F09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9949093E-E680-42F7-B983-DDE3553D7F09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9949093E-E680-42F7-B983-DDE3553D7F09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CC46A6F-EF9A-469D-83EE-A7C18596B7B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CC46A6F-EF9A-469D-83EE-A7C18596B7B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CC46A6F-EF9A-469D-83EE-A7C18596B7B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CC46A6F-EF9A-469D-83EE-A7C18596B7B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EEF55BD6-D906-46FB-AD33-2BFBAFEB533B} = {B4AB06C7-C43F-4280-A041-CD16E6CBCB8A}
+		{5CC46A6F-EF9A-469D-83EE-A7C18596B7B5} = {B4AB06C7-C43F-4280-A041-CD16E6CBCB8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D9CC8CD-6F77-4C2A-B35E-9616F80EA0D4}
